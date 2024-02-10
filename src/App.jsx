@@ -9,8 +9,9 @@ function App() {
       <>
       <Header/>
       </>
-      <div className='bg-zinc-50 py-6 h-[1000px]'>
+      <div className='bg-zinc-50 py-6 h-[1000px] flex flex-row justify-start  gap-x-4 items-start'>
       <UserMenuLeft/>
+      <Posts/>
       </div>
     </div>
   )
