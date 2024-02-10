@@ -17,8 +17,8 @@ function UserMenuLeft() {
     { title: "Explore", icon: FaBinoculars },
   ];
   return (
-    <div>
-      <div className="px-2 flex flex-col items-center ml-16 bg-white w-[300px] shadow-md  py-4 rounded-lg">
+    <div className="hidden xl:block">
+      <div className="px-2  flex flex-col items-center ml-16 bg-white w-[300px] shadow-md  py-4 rounded-lg">
         <div>
           <div>
             <figure>
