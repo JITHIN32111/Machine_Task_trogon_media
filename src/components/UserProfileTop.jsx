@@ -50,8 +50,8 @@ function UserProfileTop() {
     },
   ];
   return (
-    <div className="flex mt-5 flex-col">
-      <div className="flex flex-row gap-x-6">
+    <div className="flex mt-5 flex-col mx-auto">
+      <div className="flex flex-row gap-x-6 ">
         {/* userImg */}
         <figure className="hidden md:block">
           <img className="rounded-xl" src={profileImg} alt="" />
@@ -59,7 +59,7 @@ function UserProfileTop() {
         {/* userImg end */}
 
         {/* userDetails */}
-<div className=" flex flex-col w-[400px] px-6 py-2 rounded-2xl shadow-2xl">
+<div className=" flex flex-col w-full md:w-[400px] px-6 py-2 rounded-2xl shadow-2xl">
         <figure className="md:hidden">
           <img className="rounded-xl h-96" src={profileImg} alt="" />
         </figure>
@@ -82,7 +82,7 @@ function UserProfileTop() {
           </span>
           {/* interests */}
           <h1 className="text-[22px] text-black font-[700] pt-2">Interests</h1>
-          <div className="grid grid-cols-3 pr-0  sm:pr-0  gap-3 sm:gap-2 pt-2  ">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:sm:grid-cols-3 pr-0  sm:pr-0  gap-3 sm:gap-2 pt-2  ">
             {Menus.map((menu, index) => (
               <span
                 className={`rounded-full flex flex-row w-32 sm:w-28  py-1   text-sm bg-white text-purple-800 border border-purple-800 pl-2`}
@@ -125,7 +125,7 @@ function UserProfileTop() {
         {/* userDetails end*/}
       </div>
       {/* userBio */}
-      <span className="w-full flex flex-col justify-start pl-4 py-5 bg-white shadow-2xl rounded-3xl ml-4 mx-auto mt-10">
+      <span className="w-full flex flex-col justify-start pl-4 py-5 bg-white shadow-2xl rounded-3xl ml-0  lg:ml-4 mx-auto mt-10">
         <h1 className="text-black font-bold text-xl">Bio</h1>
           {userDetails.map((section, index) => (
           <div key={index}>
