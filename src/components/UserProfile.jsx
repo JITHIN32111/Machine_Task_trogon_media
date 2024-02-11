@@ -1,61 +1,38 @@
-import React from "react";
+import React,{useState} from "react";
 import profileImg from "../../public/allImages/UserProfile.png";
-import { IoEyeOutline } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
-import tvImg from "../../public/allImages/tv.png";
-import designImg from "../../public/allImages/Design.png";
-import actingImg from "../../public/allImages/acting.png";
-import artImg from "../../public/allImages/art.png";
-import gamesImg from "../../public/allImages/games.png";
-import cricketImg from "../../public/allImages/cricket.png";
-import photographyImg from "../../public/allImages/photography.png";
+
 import { CiHeart } from "react-icons/ci";
 import { FaLocationArrow } from "react-icons/fa6";
 import { IoIosCall } from "react-icons/io";
-function UserProfileTop() {
-  const Menus = [
-    { title: "Tv Shows", icon: tvImg },
-    { title: "Photography", icon: photographyImg },
-    { title: "Design", icon: designImg },
-    { title: "Art Gallery", icon: artImg },
-    { title: "Board games", icon: gamesImg },
-  ];
-  const userDetails = [
-    {
-      title: "Basic Information",
-      details: [
-        { label: "Date of Birth", value: "27-12-1993" },
-        { label: "Email Id", value: "example@gmail.com" },
-        { label: "Blood Group", value: "AB+" },
-        { label: "Height", value: "164cm" },
-        { label: "Weight", value: "64kg" },
-      ],
-    },
-    {
-      title: "Religious Information",
-      details: [
-        { label: "Religion", value: "Islam" },
-        { label: "Sect", value: "Sunni" },
-        { label: "Perform Namaz", value: "Always" },
-        { label: "Read Qur'an", value: "Daily" },
-        { label: "Religiousness", value: "Religious" },
-      ],
-    },
-    {
-      title: "Educational and Professional Information",
-      details: [
-        { label: "Education", value: "Bachelors (Bsc Computer Science)" },
-        { label: "Profession", value: "Computer Engineer" },
-      ],
-    },
-  ];
+import { Menus } from "../datas/data";
+import { userDetails } from "../datas/data";
+
+function UserProfile() {
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoaded = () => {
+    setLoading(false);
+  };
   return (
     <div className="flex mt-5 flex-col mx-auto">
       <div className="flex flex-row gap-x-6 ">
         {/* userImg */}
-        <figure className="hidden md:block">
-          <img className="rounded-xl" src={profileImg} alt="" />
-        </figure>
+        <figure className="hidden md:block relative">
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+          {/* You can replace the loading spinner with any loading indicator */}
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-700"></div>
+        </div>
+      )}
+      <img
+        className={`rounded-xl ${loading ? "hidden" : "block"}`}
+        src={profileImg}
+        alt=""
+        onLoad={handleImageLoaded}
+        onError={handleImageLoaded} // in case of loading failure
+      />
+    </figure>
         {/* userImg end */}
 
         {/* userDetails */}
@@ -82,7 +59,7 @@ function UserProfileTop() {
           </span>
           {/* interests */}
           <h1 className="text-[22px] text-black font-[700] pt-2">Interests</h1>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:sm:grid-cols-3 pr-0  sm:pr-0  gap-3 sm:gap-2 pt-2  ">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:sm:grid-cols-3 pr-0  sm:pr-0  gap-3 sm:gap-2 pt-2  ">
             {Menus.map((menu, index) => (
               <span
                 className={`rounded-full flex flex-row w-32 sm:w-28  py-1   text-sm bg-white text-purple-800 border border-purple-800 pl-2`}
@@ -95,7 +72,7 @@ function UserProfileTop() {
           {/* interests end*/}
 
           {/* buttons */}
-          <div className="flex flex-row items-center gap-x-12 justify-center mt-12">
+          <div className="flex flex-row items-center gap-x-12 justify-center mt-6">
             <span className="px-2 sm:w-[150px] w-full sm:px-3 pr-5 py-1 flex flex-row  rounded-full bg-pink-300">
               <span className="rounded-full ">
                 <CiHeart className="text-rose-600 font-bold" size={30} />
@@ -151,4 +128,4 @@ function UserProfileTop() {
   );
 }
 
-export default UserProfileTop;
+export default UserProfile;

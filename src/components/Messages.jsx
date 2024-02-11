@@ -1,24 +1,8 @@
 import React from "react";
-import userMsg1 from "../../public/allImages/userMsg1.png";
-import userMsg2 from "../../public/allImages/userMsg2.png";
-import userMsg3 from "../../public/allImages/userMsg3.png";
-import userMsg4 from "../../public/allImages/userMsg4.png";
-import userMsg5 from "../../public/allImages/userMsg5.png";
-import { FaYoutube } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
-import { RiFacebookFill } from "react-icons/ri";
-import { RiTwitterXFill } from "react-icons/ri";
 import Likes from "../components/Likes";
-
+import { msgIcon } from "../datas/data";
+import Footer from "./Footer";
 function Messages() {
-  const msgIcon = [
-    { icon: userMsg1 },
-    { icon: userMsg2 },
-    { icon: userMsg3 },
-    { icon: userMsg4 },
-    { icon: userMsg5 },
-  ];
-
   return (
     <div className="hidden lg:block pr-8">
       <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:py-4 px-11 dark:bg-gray-800 dark:border-gray-700">
@@ -67,27 +51,8 @@ function Messages() {
         </div>
       </div>
       <Likes />
-      <div>
-      <div className="mt-2 gap-8 font-medium flex justify-center items-center flex-wrap text-[11px]">
-        <p>Privacy Policy</p>
-        <p>Terms and Condition</p>
-        <p>Pricing</p>
-      </div>
-      <div className="mt-2 font-medium   gap-8 flex justify-start pl-4 items-center  flex-wrap text-[11px]">
-        <p>Feedback</p>
-        <p>Help & Support</p>
-      </div>
+      <Footer/>
      
-     <div className="flex flex-row text-pink-700 justify-start gap-x-3 pl-4 pt-2">
-     <FaYoutube/>
-     <RiInstagramFill/>
-     <RiFacebookFill/>
-     <RiTwitterXFill/>
-     <p className="text-[12px] text-gray-500">© 2024 Mynikkah </p>
-     </div>
-
-      </div>
-    
     </div>
   );
 }

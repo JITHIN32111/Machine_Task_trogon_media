@@ -1,21 +1,12 @@
 import React from "react";
 import { IoEyeOutline } from "react-icons/io5";
-import { RiHome2Fill } from "react-icons/ri";
-import { TbMessageCircle2Filled } from "react-icons/tb";
-import { IoMdSettings } from "react-icons/io";
-import { BsRocketFill } from "react-icons/bs";
-import { FaBinoculars } from "react-icons/fa6";
+
 import userImg from "../../public/allImages/userImg.png";
 import appStoreImg from "../../public/allImages/AppStore.png";
 import googlePlay from "../../public/allImages/GooglePlay.png";
+import { Icons } from "../datas/data";
+
 function UserMenuLeft() {
-  const Menus = [
-    { title: "Home", icon: RiHome2Fill },
-    { title: "Messages", icon: TbMessageCircle2Filled },
-    { title: "Settings", icon: IoMdSettings },
-    { title: "Upgrade", icon: BsRocketFill },
-    { title: "Explore", icon: FaBinoculars },
-  ];
   return (
     <div className="hidden xl:block">
       <div className="px-2  flex flex-col items-center ml-16 bg-white w-[300px] shadow-md  py-4 rounded-lg">
@@ -37,7 +28,7 @@ function UserMenuLeft() {
         </div>
 
         <ul className=" w-[250px] mr-2 bg-white flex flex-col gap-y-2">
-          {Menus.map((Menu, index) => (
+          {Icons.map((Menu, index) => (
             <li
               className={`flex rounded-md p-2 cursor-pointer ${
                 index === 0
@@ -63,8 +54,8 @@ function UserMenuLeft() {
           typesetting industry.
         </p>
         <div className="mt-4 flex flex-col gap-y-4">
-          <img src={appStoreImg} alt="" className="rounded-md"/>
-          <img src={googlePlay} alt="" className="rounded-md"/>
+          <img src={appStoreImg} alt="" className="rounded-md" />
+          <img src={googlePlay} alt="" className="rounded-md" />
         </div>
       </div>
     </div>

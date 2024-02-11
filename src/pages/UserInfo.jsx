@@ -1,6 +1,6 @@
 import React from "react";
 import UserMenuLeft from "../components/UserMenuLeft";
-import UserProfileTop from "../components/UserProfileTop";
+import UserProfileTop from "../components/UserProfile";
 import Header from "../components/Header";
 function Userinfo() {
   return (
