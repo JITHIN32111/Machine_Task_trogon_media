@@ -21,7 +21,7 @@ function UserProfile() {
         <figure className="hidden md:block relative">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
-          {/* You can replace the loading spinner with any loading indicator */}
+      
           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-700"></div>
         </div>
       )}
