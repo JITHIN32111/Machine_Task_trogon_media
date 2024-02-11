@@ -3,18 +3,27 @@ import { IoMdLogOut } from "react-icons/io";
 import MobileNav from "./MobileNav";
 import { TiThMenuOutline } from "react-icons/ti";
 import { BiSolidMessageSquareDetail } from "react-icons/bi";
+import { FaHeartCircleExclamation } from "react-icons/fa6";
 import MessageModal from "./MessageModal";
+import LikesModal from "./LikesModal";
 
 function Header() {
   const [show, setShow] = useState(false);
   const [openMessage, setOpenMessage] = useState(false);
+  const [openLikes, setOpenLikes] = useState(false);
 
   const toggleMenu = () => {
     setShow(!show);
   };
 
   const toggleMessage = () => {
-    setOpenMessage(!openMessage); // Toggle the openMessage state
+    setOpenMessage(!openMessage);
+    setOpenLikes(false); // Close the LikesModal when opening the MessageModal
+  };
+
+  const toggleLikes = () => {
+    setOpenLikes(!openLikes);
+    setOpenMessage(false); // Close the MessageModal when opening the LikesModal
   };
 
   return (
@@ -30,6 +39,11 @@ function Header() {
           onClick={toggleMessage}
           size={30}
         />
+        <FaHeartCircleExclamation
+          className="lg:hidden text-black cursor-pointer"
+          onClick={toggleLikes} 
+          size={30}
+        />
       </div>
 
       <div className="flex text-md sm:text-lg flex-row items-center cursor-pointer transition text-black ease-in hover:scale-90 ml-auto">
@@ -39,6 +53,7 @@ function Header() {
 
       {show ? <MobileNav setShow={setShow} /> : null}
       {openMessage ? <MessageModal setOpenMessage={setOpenMessage} /> : null}
+      {openLikes ? <LikesModal setOpenLikes={setOpenLikes} /> : null}
     </div>
   );
 }

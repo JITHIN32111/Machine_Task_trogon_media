@@ -16,7 +16,7 @@ function MessageModal({ setOpenMessage }) {
 
   return (
     <div className="z-40 xl:hidden sm:w-1/2 fixed top-0 mt-20 left-1">
-      <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:py-4 px-11 dark:bg-gray-800 dark:border-gray-700">
+      <div class="w-[350px] p-4 bg-white border border-gray-200 rounded-lg shadow sm:py-4 px-11 dark:bg-gray-800 dark:border-gray-700">
         <div class="flex items-center justify-between mb-4">
           <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
             Messages

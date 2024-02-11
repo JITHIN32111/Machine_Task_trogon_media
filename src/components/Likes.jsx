@@ -27,7 +27,7 @@ function Likes() {
 
     <ul role="list" class="divide-y  w-[200px] sm:w-[220] divide-pink-300 dark:divide-gray-700">
     {msgIcon.map((msgIcon,index)=>(
-  <li class="py-3 sm:py-4">
+  <li class="py-3 sm:py-4" key={index}>
   <div class="flex items-center">
       <div class="flex-shrink-0">
           <img class="w-11 h-10  rounded-full" src={msgIcon.icon} alt="Neil image"/>

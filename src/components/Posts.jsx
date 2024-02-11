@@ -1,8 +1,8 @@
 import React from "react";
 import user1img from "../../public/allImages/user4img.png";
 import user2img from "../../public/allImages/user3img.png";
-import user3img from "../../public/allImages/user5img.png";
-
+import user3img from "../../public/allImages/user8.png";
+import { Link, useNavigate } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { ImInfo } from "react-icons/im";
 import { FaLocationArrow } from "react-icons/fa6";
@@ -14,8 +14,16 @@ import artImg from "../../public/allImages/art.png";
 import gamesImg from "../../public/allImages/games.png";
 import cricketImg from "../../public/allImages/cricket.png";
 import photographyImg from "../../public/allImages/photography.png";
+import user4img from "../../public/allImages/user6.png";
+import user5img from "../../public/allImages/user7.png";
 
-const PostImgs = [{ icon: user1img }, { icon: user2img }, { icon: user3img }];
+const PostImgs = [
+  { icon: user1img },
+  { icon: user2img },
+  { icon: user3img },
+  { icon: user4img },
+  { icon: user5img },
+];
 
 const Menus = [
   { title: "Tv Shows", icon: tvImg },
@@ -23,15 +31,17 @@ const Menus = [
   { title: "Design", icon: designImg },
   { title: "Acting", icon: actingImg },
   { title: "Art Gallery", icon: artImg },
-  { title: "Board games", icon: gamesImg },
+  { title: " games", icon: gamesImg },
   { title: "Cricket", icon: cricketImg },
 ];
 
 function Posts() {
+  const navigate = useNavigate();
   return (
     <div className="flex w-full flex-col gap-y-8 pl-4 px-0 sm:px-12 sm:pl-20 md:pl-10 lg:pl-40 xl:pl-0">
       {PostImgs.map((post, index) => (
         <div
+        onClick={() => navigate('/userInfo')}
           key={index}
           className="flex flex-col items-center bg-white w-full shadow-md rounded-lg"
         >
@@ -66,15 +76,19 @@ function Posts() {
             </span>
             <h1 className="text-xl pr-4 md:pr-12 font-bold">Interests</h1>
 
-            <div className="grid grid-cols-3 md:grid-cols-4 pr-0 sm:pr-2 gap-3 sm:gap-2">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 pr-0 sm:pr-2 gap-3 sm:gap-2">
               {Menus.map((menu, index) => (
-                <span
-                  key={index}
-                  className="rounded-full flex flex-row w-32 sm:w-32 py-1 px-2 text-sm bg-pink-600 text-white pl-4"
-                >
-                  <img src={menu.icon} className="w-4 pt-1 h-4" alt="" />
-                  {menu.title}
-                </span>
+            
+            <span
+         
+              key={index}
+              className="rounded-full flex flex-row w-28 sm:w-32 py-1 px-2 text-sm bg-pink-600 text-white pl-4"
+            >
+              <img src={menu.icon} className="w-4 pt-1 h-4" alt="" />
+              {menu.title}
+            </span>
+      
+          
               ))}
             </div>
           </div>

@@ -4,13 +4,7 @@ import userMsg2 from "../../public/allImages/userMsg2.png";
 import userMsg3 from "../../public/allImages/userMsg3.png";
 import userMsg4 from "../../public/allImages/userMsg4.png";
 import userMsg5 from "../../public/allImages/userMsg5.png";
-import { FaYoutube } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
-import { RiFacebookFill } from "react-icons/ri";
-import { RiTwitterXFill } from "react-icons/ri";
-import Likes from "../components/Likes";
-
-function Messages() {
+function LikesModal({setOpenLikes}) {
   const msgIcon = [
     { icon: userMsg1 },
     { icon: userMsg2 },
@@ -18,13 +12,12 @@ function Messages() {
     { icon: userMsg4 },
     { icon: userMsg5 },
   ];
-
   return (
-    <div className="hidden lg:block pr-8">
-      <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:py-4 px-11 dark:bg-gray-800 dark:border-gray-700">
-        <div class="flex items-center justify-between mb-4">
-          <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
-            Messages
+    <div className="z-40 xl:hidden sm:w-1/2 fixed top-0 mt-20 left-1">
+      <div class="w-[350px] p-4   bg-white border border-gray-200 rounded-lg shadow sm:py-4 px-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex items-center justify-between  mb-4">
+          <h5 class="text-lg font-bold leading-none text-gray-900 dark:text-white">
+            Likes and Matches
           </h5>
           <a
             href="#"
@@ -33,7 +26,16 @@ function Messages() {
             see all
           </a>
         </div>
-        <div class="flow-root">
+        <div className="flex pt-2 flex-row relative text-white">
+          <span className="rounded-3xl bg-pink-700 pl-4 z-40 relative py-1 px-20 mr-[-12px] flex items-center">
+            Likes
+          </span>
+          <span className="rounded-3xl bg-pink-300 z-35 relative py-1 px-12 ml-[-15px] flex items-center text-black">
+            Matches
+          </span>
+        </div>
+
+        <div>
           <ul
             role="list"
             class="divide-y  w-[200px] sm:w-[220] divide-pink-300 dark:divide-gray-700"
@@ -57,7 +59,7 @@ function Messages() {
                     </div>
 
                     <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                      talk to u later
+                      Likes you 3 min ago
                     </p>
                   </div>
                 </div>
@@ -66,30 +68,8 @@ function Messages() {
           </ul>
         </div>
       </div>
-      <Likes />
-      <div>
-      <div className="mt-2 gap-8 font-medium flex justify-center items-center flex-wrap text-[11px]">
-        <p>Privacy Policy</p>
-        <p>Terms and Condition</p>
-        <p>Pricing</p>
-      </div>
-      <div className="mt-2 font-medium   gap-8 flex justify-start pl-4 items-center  flex-wrap text-[11px]">
-        <p>Feedback</p>
-        <p>Help & Support</p>
-      </div>
-     
-     <div className="flex flex-row text-pink-700 justify-start gap-x-3 pl-4 pt-2">
-     <FaYoutube/>
-     <RiInstagramFill/>
-     <RiFacebookFill/>
-     <RiTwitterXFill/>
-     <p className="text-[12px] text-gray-500">© 2024 Mynikkah </p>
-     </div>
-
-      </div>
-    
     </div>
   );
 }
 
-export default Messages;
+export default LikesModal;

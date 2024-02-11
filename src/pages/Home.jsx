@@ -3,6 +3,8 @@ import Header from '../components/Header'
 import Posts from '../components/Posts'
 import UserMenuLeft from '../components/UserMenuLeft'
 import Messages from '../components/Messages'
+import Likes from "../components/Likes";
+
 function Home() {
   return (
     <div>
@@ -14,7 +16,7 @@ function Home() {
       <Posts/>
       <div>
       <Messages/>
-
+    
       </div>
       </div>
     </div>
