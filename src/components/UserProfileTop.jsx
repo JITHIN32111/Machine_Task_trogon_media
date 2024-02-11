@@ -59,10 +59,10 @@ function UserProfileTop() {
         {/* userImg end */}
 
         {/* userDetails */}
-<div className=" flex flex-col w-full md:w-[400px] px-6 py-2 rounded-2xl shadow-2xl">
-        <figure className="md:hidden">
-          <img className="rounded-xl h-96" src={profileImg} alt="" />
-        </figure>
+        <div className=" flex flex-col w-full md:w-[400px] px-6 py-2 rounded-2xl shadow-2xl">
+          <figure className="md:hidden">
+            <img className="rounded-xl h-96" src={profileImg} alt="" />
+          </figure>
           <h2 className="text-[22px] text-black font-[700] ">Faheema</h2>
           <h2 className="text-[22px] text-gray-600 font-[700] ">MN001XDR</h2>
           <span className="flex text-gray-400 flex-row justify-start gap-2 text-lg font-normal items-start'">
@@ -127,7 +127,7 @@ function UserProfileTop() {
       {/* userBio */}
       <span className="w-full flex flex-col justify-start pl-4 py-5 bg-white shadow-2xl rounded-3xl ml-0  lg:ml-4 mx-auto mt-10">
         <h1 className="text-black font-bold text-xl">Bio</h1>
-          {userDetails.map((section, index) => (
+        {userDetails.map((section, index) => (
           <div key={index}>
             <h1 className="text-gray-600 font-bold text-xl pt-5">
               {section.title}

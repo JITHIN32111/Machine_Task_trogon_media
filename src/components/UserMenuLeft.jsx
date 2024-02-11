@@ -63,8 +63,8 @@ function UserMenuLeft() {
           typesetting industry.
         </p>
         <div className="mt-4 flex flex-col gap-y-4">
-          <img src={appStoreImg} alt="" />
-          <img src={googlePlay} alt="" />
+          <img src={appStoreImg} alt="" className="rounded-md"/>
+          <img src={googlePlay} alt="" className="rounded-md"/>
         </div>
       </div>
     </div>

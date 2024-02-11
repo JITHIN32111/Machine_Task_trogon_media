@@ -8,6 +8,7 @@ import { FaBinoculars } from "react-icons/fa6";
 import userImg from "../../public/allImages/userImg.png";
 import appStoreImg from "../../public/allImages/AppStore.png";
 import googlePlay from "../../public/allImages/GooglePlay.png";
+import { MdCloseFullscreen } from "react-icons/md";
 function MobileNav({setShow}) {
   const Menus = [
     { title: "Home", icon: RiHome2Fill },
@@ -17,10 +18,13 @@ function MobileNav({setShow}) {
     { title: "Explore", icon: FaBinoculars },
   ];
   return (
-    <div className="z-40 xl:hidden sm:w-1/2 fixed top-0 mt-20 left-1">
+    <div className="z-45 xl:hidden sm:w-1/2 fixed top-0 mt-20 left-1">
       <div className="px-2  flex flex-col items-center ml-0 bg-white w-[300px] shadow-md  py-2 max-h-[400px] overflow-auto">
         <div>
-            <p className="text-end" onClick={() => setShow(false)}>   close</p>
+          <span className="flex justify-end pb-2 text-gray-500 ">
+          <MdCloseFullscreen size={20} className="text-end cursor-pointer" onClick={() => setShow(false)}/>
+
+          </span>
          
           <div>
             <figure>
@@ -56,14 +60,14 @@ function MobileNav({setShow}) {
             </li>
           ))}
         </ul>
-        <h1 className="font-bold text-lg">Download our App</h1>
+        <h1 className="font-bold text-md">Download our App</h1>
         <p className="text-sm text- font-normal">
           Lorem Ipsum is simply dummy text of <br /> the printing and
           typesetting industry.
         </p>
-        <div className="mt-4 flex flex-col gap-y-4">
-          <img src={appStoreImg} alt="" />
-          <img src={googlePlay} alt="" />
+        <div className="mt-4 flex flex-row gap-x-4">
+          <img src={appStoreImg} className="w-1/2 h-5 rounded-md" alt="" />
+          <img src={googlePlay} alt="" className="w-1/2 h-5 rounded-md" />
         </div>
       </div>
 
